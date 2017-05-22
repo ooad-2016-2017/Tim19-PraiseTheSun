@@ -26,6 +26,8 @@
 
                 </AppBarButton.Flyout>
             </AppBarButton>
+            <AppBarButton x:Name="Username_Copy" HorizontalAlignment="Left" Icon="Admin" Label="Administration" Margin="966,-4,0,0" VerticalAlignment="Top" Width="142">
+            </AppBarButton>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="81" Margin="156,80,0,0" VerticalAlignment="Top" Width="980">
             <TextBlock x:Name="Search" HorizontalAlignment="Left" Margin="10,13,0,0" TextWrapping="Wrap" Text="Search:" VerticalAlignment="Top" Height="39" Width="79" FontSize="24"/>
@@ -75,6 +77,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="695,645,0,0" TextWrapping="Wrap" Text="Price:" VerticalAlignment="Top" FontSize="36"/>
+        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="873,641,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="40"/>
 
     </Grid>
 </Page>
