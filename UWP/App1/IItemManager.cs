@@ -8,9 +8,9 @@ namespace App1
 {
     interface IItemManager
     {
-        public bool dodajItem(Item objekt);
-        public bool obrisiItem(Item objekt);
-        public Item dajItem(int id);
-        public int findID(Item objekt);
+        bool dodajItem(Item objekt);
+        bool obrisiItem(Item objekt);
+        Item dajItem(int id);
+        int findID(Item objekt);
     }
 }

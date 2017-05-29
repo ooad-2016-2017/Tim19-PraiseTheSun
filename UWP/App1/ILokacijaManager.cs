@@ -8,9 +8,9 @@ namespace App1
 {
     interface ILokacijaManager
     {
-        public bool dodajLokaciju(Lokacija loc);
-        public bool obrisiLokaciju(Lokacija loc);
-        public Lokacija dajLokaciju(int id);
-        public int findID(Lokacija loc);
+        bool dodajLokaciju(Lokacija loc);
+        bool obrisiLokaciju(Lokacija loc);
+        Lokacija dajLokaciju(int id);
+        int findID(Lokacija loc);
     }
 }

@@ -8,9 +8,9 @@ namespace App1
 {
     interface IKritikaManager
     {
-        public void dodajKritiku(Kritika kom);
-        public void obrisiKritiku(Kritika kom);
-        public Kritika dajKritiku(int id);
-        public int findID(Kritika kom);
+        void dodajKritiku(Kritika kom);
+        void obrisiKritiku(Kritika kom);
+        Kritika dajKritiku(int id);
+        int findID(Kritika kom);
     }
 }

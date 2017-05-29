@@ -8,7 +8,7 @@ namespace App1
 {
     interface IItemValidator
     {
-        public bool jeValidno();
-        public String dajUpute();
+        bool jeValidno();
+        String dajUpute();
     }
 }

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace App1
 {
-    interface IArtikalValidator
+    interface ICreditCardService
     {
-        bool jeValidno();
-        String dajUpute();
+        bool zahtjevProdaja(Cart korpa, KreditnaKartica card);
     }
 }

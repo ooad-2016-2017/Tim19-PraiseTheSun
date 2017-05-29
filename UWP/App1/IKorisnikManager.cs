@@ -8,9 +8,9 @@ namespace App1
 {
     interface IKorisnikManager
     {
-        public bool dodajKorisnika(Korisnik user);
-        public bool obrisiKorisnika(Korisnik user);
-        public Korisnik dajKorisnika(String id);
-        public String findID(Korisnik user);
+        bool dodajKorisnika(Korisnik user);
+        bool obrisiKorisnika(Korisnik user);
+        Korisnik dajKorisnika(String id);
+        String findID(Korisnik user);
     }
 }

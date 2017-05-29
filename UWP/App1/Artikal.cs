@@ -34,7 +34,7 @@ namespace App1
         {
             listaKritika.Add(komentar);
         }
-        public bool obrisiKritiku(Kririka komentar)
+        public bool obrisiKritiku(Kritika komentar)
         {
             return listaKritika.Remove(komentar);
         }

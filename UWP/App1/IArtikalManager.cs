@@ -8,9 +8,9 @@ namespace App1
 {
     interface IArtikalManager
     {
-        public bool dodajArtikal(Artikal art);
-        public bool brisiArtikal(Artikal art);
-        public Artikal dajArtikal(int id);
-        public int findID(Artikal art);
+        bool dodajArtikal(Artikal art);
+        bool brisiArtikal(Artikal art);
+        Artikal dajArtikal(int id);
+        int findID(Artikal art);
     }
 }
