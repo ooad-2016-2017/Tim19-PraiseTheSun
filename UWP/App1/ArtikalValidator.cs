@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App1
 {
-    class ArtikalValidator
+    class ArtikalValidator : IArtikalValidator
     {
         public bool validnost { get; set; }
         public string upute { get; set; }
@@ -30,7 +30,7 @@ namespace App1
             if(roba.info.Length > maxInfoLen)
             {
                 validnost = false;
-                upute += "Predug string ino";
+                upute += "String koji sadrzi informacije o artiklu predug\n";
             }
         }
         public bool jeValidno()

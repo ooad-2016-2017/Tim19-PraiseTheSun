@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
 
 namespace App1
 {
-    class SlikaArtikal
+    class SlikaKorisnik
     {
         public Image slika { get; set; }
-        public SlikaArtikal(Image slika)
+        public SlikaKorisnik(Image slika)
         {
             const int maxWidth = 200;
             const int maxHeight = 200;

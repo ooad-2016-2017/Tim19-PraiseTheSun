@@ -7,31 +7,28 @@ using System.Drawing;
 
 namespace App1
 {
+    public enum artType { Fizicki, Elektronski }
     class Artikal
     {
-        public enum artType{ Fizicki, Elektronski }
         public String ime { get; set; }
-        public int cijena { get; set; }
+        public int cijena { get; set; } //cijena kao int koja je 100 puta veca od stvarne
         public artType tipArtikla { get; set; }
-        public String info { get; set; }
+        public String info { get; set; } //opce informacije o artiklu
         public int bazaID { get; set; }
         public List<Kritika> listaKritika { get; set; }
         public List<String> listaKategorija { get; set; }
         public List<Artikal> listaPreporuka { get; set; }
         public SlikaArtikal slika { get; set; }
-        
-        Artikal(artType tipArtikla)
-        {
-            this.tipArtikla = tipArtikla;
-        }
-        Artikal(String info, String ime, float cijena, List<String> listaKategorija, artType tipArtikla, Image slika, String sifra)
+        public Artikal(String info, String ime, float cijena, List<String> listaKategorija, artType tipArtikla, Image slika, String sifra)
         {
             this.info = info;
             this.ime = ime;
-            this.cijena = (int)(cijena * 100 + 1e-6);
-            this.listaKategorija = listaKategorija;
+            this.cijena = (int)(cijena * 100 + 1e-6); //kako bi se izbjegao problem sa zaokruzivanjem
+            this.listaKategorija = new List<String>(listaKategorija);
             this.tipArtikla = tipArtikla;
-            this.slika = new SlikaArtikal(slika);
+            this.slika = slika;
+            this.listaKritika = new List<Kritika>();
+            this.listaPreporuka = new List<Artikal>();
         }
         public void dodajKritiku(Kritika komentar)
         {
@@ -57,7 +54,7 @@ namespace App1
         {
             return listaKategorija.Remove(kategorija);
         }
-        public float dajCijenu()
+        public float dajCijenu() //vraca stvarnu cijenu artikla(float)
         {
             return (float)cijena / 100;
         }

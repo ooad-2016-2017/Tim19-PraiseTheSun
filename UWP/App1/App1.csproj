@@ -92,15 +92,43 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminManager.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Artikal.cs" />
+    <Compile Include="ArtikalManager.cs" />
     <Compile Include="ArtikalValidator.cs" />
+    <Compile Include="Cart.cs" />
+    <Compile Include="DostavneInformacije.cs" />
     <Compile Include="Filter Search.xaml.cs">
       <DependentUpon>Filter Search.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IArtikalManager.cs" />
     <Compile Include="IArtikalValidator.cs" />
+    <Compile Include="IItemManager.cs" />
+    <Compile Include="IItemValidator.cs" />
+    <Compile Include="IKorisnikManager.cs" />
+    <Compile Include="IKorisnikValidator.cs" />
+    <Compile Include="IKritikaManager.cs" />
+    <Compile Include="IKritikaValidator.cs" />
+    <Compile Include="ILokacijaManager.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemManager.cs" />
+    <Compile Include="ItemValidator.cs" />
+    <Compile Include="IValidatorKartica.cs" />
+    <Compile Include="Korisnik.cs" />
+    <Compile Include="KorisnikInfo.cs" />
+    <Compile Include="KorisnikManager.cs" />
+    <Compile Include="KorisnikValidator.cs" />
+    <Compile Include="KreditnaKartica.cs" />
+    <Compile Include="Kritika.cs" />
+    <Compile Include="KritikaManager.cs" />
+    <Compile Include="KritikaValidator.cs" />
+    <Compile Include="Lokacija.cs" />
+    <Compile Include="LokacijaManager.cs" />
+    <Compile Include="Password.cs" />
+    <Compile Include="RegistrationManager.cs" />
     <Compile Include="Sign In Page.xaml.cs">
       <DependentUpon>Sign In Page.xaml</DependentUpon>
     </Compile>
@@ -108,6 +136,7 @@
       <DependentUpon>Login Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="SlikaArtikal.cs" />
+    <Compile Include="SlikaKorisnik.cs" />
     <Compile Include="User Page.xaml.cs">
       <DependentUpon>User Page.xaml</DependentUpon>
     </Compile>
@@ -127,6 +156,7 @@
       <DependentUpon>Homepage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidatorKartica.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
