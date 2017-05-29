@@ -1,47 +1,4 @@
 
-CREATE SEQUENCE korisnik_seq
-INCREMENT BY 1
-START WITH 1
-MAXVALUE 50100
-NOCACHE
-NOCYCLE
-
-CREATE SEQUENCE artikal_seq
-INCREMENT BY 1
-START WITH 1
-MAXVALUE 50100
-NOCACHE
-NOCYCLE
-
-CREATE SEQUENCE lokacija_seq
-INCREMENT BY 1
-START WITH 1
-MAXVALUE 50100
-NOCACHE
-NOCYCLE
-
-CREATE SEQUENCE item_seq
-INCREMENT BY 1
-START WITH 1
-MAXVALUE 50100
-NOCACHE
-NOCYCLE
-
-CREATE SEQUENCE cart_seq
-INCREMENT BY 1
-START WITH 1
-MAXVALUE 50100
-NOCACHE
-NOCYCLE
-
-CREATE SEQUENCE zahtjev_seq
-INCREMENT BY 1
-START WITH 1
-MAXVALUE 50100
-NOCACHE
-NOCYCLE
-
-
 CREATE TABLE KorisnikInfo(id NUMBER NOT NULL,
                           username VARCHAR2(15) NOT NULL,
                           pass VARCHAR2(15) NOT NULL,
@@ -60,27 +17,24 @@ CREATE TABLE KolekcijaKorisnika(id_korisnika NUMBER NOT NULL,
                                 CONSTRAINT korisnik_fk FOREIGN KEY (id_korisnika) REFERENCES Korisnik (id),
                                 CONSTRAINT artikal_fk FOREIGN KEY (id_korisnika) REFERENCES Artikal (id));
 
-CREATE TABLE Korisnik(id NUMBER NOT NULL,
+CREATE TABLE Korisnik(id INTEGER PRIMARY KEY,
                       adresa NUMBER NOT NULL,
                       kreditna VARCHAR2(15) NOT NULL,
                       tipAccounta VARCHAR2(15) NOT NULL,
-                      CONSTRAINT c_Korid_PK PRIMARY KEY (id),
                       CONSTRAINT kreditna_fk FOREIGN KEY (kreditna) REFERENCES KreditnaKartica (brojKartice)
 );
 
-CREATE TABLE Artikal(id NUMBER NOT NULL,
+CREATE TABLE Artikal(id INTEGER PRIMARY KEY,
                      ime VARCHAR2(20) NOT null,
                      cijena NUMBER NOT NULL,
                      fizicki BOOLEAN,
                      info VARCHAR2(100) NOT NULL,
                      sifra number NOT NULL,
-                     CONSTRAINT c_A_id_PK PRIMARY KEY (id),
                      CONSTRAINT sifr_id FOREIGN KEY (sifra) REFERENCES SifraArtikal (id));
 
-CREATE TABLE Lokacija(id NUMBER NOT NULL,
+CREATE TABLE Lokacija(INTEGER PRIMARY KEY,
                       adresa VARCHAR2(20) NOT NULL,
-                      opisLokacije VARCHAR2(15) NOT NULL,
-                      CONSTRAINT c_Loc_id_PK PRIMARY KEY (id));
+                      opisLokacije VARCHAR2(15) NOT NULL,);
 
 CREATE TABLE Item(id NUMBER NOT NULL,
                   datumProdaje DATE,
@@ -100,18 +54,16 @@ CREATE TABLE Kritika(id_korisnika NUMBER NOT NULL,
                      ocjena NUMBER NOT NULL,
                      CONSTRAINT korisnik_id_kritika_fk FOREIGN KEY (id_korisnika) REFERENCES Korisnik (id));
 
-CREATE TABLE Cart(id_cart NUMBER NOT NULL,
+CREATE TABLE Cart(INTEGER PRIMARY KEY,
                   id_korisnika NUMBER NOT NULL,
                   id_artikal NUMBER NOT NULL,
-                  CONSTRAINT c_id_cart_PK PRIMARY KEY (id_cart),
                   CONSTRAINT korisnik_fk FOREIGN KEY (id_korisnika) REFERENCES Korisnik (id),
                   CONSTRAINT artikal_fk FOREIGN KEY (id_artikal) REFERENCES Artikal (id));
 
 CREATE TABLE Zahtjev(id_korisnik NUMBER NOT NULL,
-                     id_zahtjeva NUMBER NOT NULL,
+                     id_zahtjeva INTEGER PRIMARY KEY,
                      datumPodnosenja DATE,
                      obrada VARCHAR2(10) NOT NULL,
-                     CONSTRAINT c_id_zahtjev_PK PRIMARY KEY (id_zahtjeva),
                      CONSTRAINT korisnik_fk FOREIGN KEY (id_korisnika) REFERENCES Korisnik (id),
                      CONSTRAINT obrada_ck CHECK (obrada 'auto' OR 'manual'));
 
