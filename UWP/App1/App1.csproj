@@ -95,15 +95,19 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Artikal.cs" />
+    <Compile Include="ArtikalValidator.cs" />
     <Compile Include="Filter Search.xaml.cs">
       <DependentUpon>Filter Search.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IArtikalValidator.cs" />
     <Compile Include="Sign In Page.xaml.cs">
       <DependentUpon>Sign In Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login Page.xaml.cs">
       <DependentUpon>Login Page.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SlikaArtikal.cs" />
     <Compile Include="User Page.xaml.cs">
       <DependentUpon>User Page.xaml</DependentUpon>
     </Compile>
@@ -181,6 +185,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
