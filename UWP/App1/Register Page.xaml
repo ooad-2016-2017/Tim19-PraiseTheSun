@@ -23,7 +23,7 @@
             <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Margin="263,123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="154" FontSize="24"/>
             <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Margin="263,209,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="154" FontSize="24"/>
             <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Margin="618,57,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="154" FontSize="24"/>
-            <Button x:Name="Register" Content="Register" HorizontalAlignment="Left" Margin="334,373,0,0" VerticalAlignment="Top" Height="45" Width="162" FontSize="24"/>
+            <Button x:Name="Register" Content="Register" HorizontalAlignment="Left" Margin="334,373,0,0" VerticalAlignment="Top" Height="45" Width="162" FontSize="24" Click="Register_Click"/>
         </Grid>
         <Image x:Name="image" HorizontalAlignment="Left" Height="502" Margin="1043,120,0,0" VerticalAlignment="Top" Width="227"/>
 

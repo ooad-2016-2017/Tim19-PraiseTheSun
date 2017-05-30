@@ -20,25 +20,33 @@ namespace App1
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class BlankPage8 : Page
+    public sealed partial class BlankPage2 : Page
     {
         using (GameShopEntities context = new GameShopEntities())
         {
-                public BlankPage8()
+                public BlankPage2()
             {
                 this.InitializeComponent();
             }
 
-            private void button_Click(System.Object sender, RoutedEventArgs e)
+            private void Register_Click(System.Object sender, RoutedEventArgs e)
             {
-                Kritika kritika = new Kritika
+                Lokacija lokacija = new Lokacija()
                 {
-                //staviti za id
-                komentar = textBox.Text;
-                ocjena = Int32.Parse(textBox1.Text);
-                removed = false;
-                };
-                context.Kritika.Add(kritika);
+                    //??
+                    adresa = textBox_Copy3.Text;       
+                }
+
+
+                Korisnik korisnik = new Korisnik()
+                {
+                    username = textBox.Text;
+                    pass = textBox_Copy1.Text;
+                    //treba staviti onu od iznad
+                    tipAccounta= "Obični";
+                };    
+                context.Lokacija.Add(lokacija);
+                context.Korisnik.Add(korisnik);           
             }
         }
     }

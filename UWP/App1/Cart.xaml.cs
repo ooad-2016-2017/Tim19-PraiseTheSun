@@ -31,5 +31,10 @@ namespace App1
         {
 
         }
+
+        private void button1_Click(System.Object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

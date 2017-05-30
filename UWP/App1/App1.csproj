@@ -155,8 +155,8 @@
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Sign In Page.xaml.cs">
-      <DependentUpon>Sign In Page.xaml</DependentUpon>
+    <Compile Include="Register Page.xaml.cs">
+      <DependentUpon>Register Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login Page.xaml.cs">
       <DependentUpon>Login Page.xaml</DependentUpon>
@@ -242,7 +242,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Sign In Page.xaml">
+    <Page Include="Register Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

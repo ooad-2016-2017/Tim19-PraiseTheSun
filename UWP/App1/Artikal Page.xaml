@@ -47,9 +47,6 @@
             <Image x:Name="image" HorizontalAlignment="Left" Height="162" Margin="10,10,0,0" VerticalAlignment="Top" Width="573"/>
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,177,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="20" Height="261" Width="573"/>
             <Grid Height="68" Margin="10,273,10,0" VerticalAlignment="Top"/>
-            <Image x:Name="image1" HorizontalAlignment="Left" Height="100" Margin="0,346,0,0" VerticalAlignment="Top" Width="195"/>
-            <Image x:Name="image1_Copy" HorizontalAlignment="Left" Height="100" Margin="394,348,0,0" VerticalAlignment="Top" Width="189"/>
-            <Image x:Name="image1_Copy1" HorizontalAlignment="Left" Height="100" Margin="200,346,0,0" VerticalAlignment="Top" Width="189"/>
         </Grid>
         <ListView x:Name="listView" HorizontalAlignment="Left" Height="115" Margin="34,578,0,0" VerticalAlignment="Top" Width="619">
             <ListView.ItemTemplate>

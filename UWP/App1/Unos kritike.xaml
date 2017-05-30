@@ -11,7 +11,9 @@
         <Grid HorizontalAlignment="Left" Height="566" Margin="283,94,0,0" VerticalAlignment="Top" Width="675">
             <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="38,37,0,0" TextWrapping="Wrap" Text="Vaša kritika:" VerticalAlignment="Top" FontSize="30"/>
             <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="346" Margin="10,99,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="655" FontSize="24"/>
-            <Button x:Name="button" Content="Submit" HorizontalAlignment="Left" Margin="290,478,0,0" VerticalAlignment="Top" FontSize="24"/>
+            <Button x:Name="button" Content="Submit" HorizontalAlignment="Left" Margin="290,512,0,0" VerticalAlignment="Top" FontSize="24" Click="button_Click"/>
+            <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="197,473,0,0" TextWrapping="Wrap" Text="Ocjena:" VerticalAlignment="Top" FontSize="20"/>
+            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="290,461,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="20" Width="96"/>
         </Grid>
         <Image x:Name="image" HorizontalAlignment="Left" Height="502" Margin="1043,120,0,0" VerticalAlignment="Top" Width="227"/>
 
