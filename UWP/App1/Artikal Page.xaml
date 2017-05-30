@@ -45,13 +45,8 @@
         </Grid>
         <Grid HorizontalAlignment="Left" Height="448" Margin="658,176,0,0" VerticalAlignment="Top" Width="593">
             <Image x:Name="image" HorizontalAlignment="Left" Height="162" Margin="10,10,0,0" VerticalAlignment="Top" Width="573"/>
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,177,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="20" Height="91" Width="573"/>
-            <Grid Height="68" Margin="10,273,10,0" VerticalAlignment="Top">
-                <AppBarButton x:Name="Neki" HorizontalAlignment="Left" Label="Neki" Margin="10,2,0,0" VerticalAlignment="Top" Width="129" Icon="Accept"/>
-                <AppBarButton x:Name="appBarButton_Copy" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="144,2,0,0" VerticalAlignment="Top" Width="135"/>
-                <AppBarButton x:Name="appBarButton_Copy1" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="284,2,0,0" VerticalAlignment="Top" Width="138"/>
-                <AppBarButton x:Name="appBarButton_Copy2" HorizontalAlignment="Left" Icon="Accept" Label="appbarbutton" Margin="427,2,0,0" VerticalAlignment="Top" Width="136"/>
-            </Grid>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,177,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="20" Height="261" Width="573"/>
+            <Grid Height="68" Margin="10,273,10,0" VerticalAlignment="Top"/>
             <Image x:Name="image1" HorizontalAlignment="Left" Height="100" Margin="0,346,0,0" VerticalAlignment="Top" Width="195"/>
             <Image x:Name="image1_Copy" HorizontalAlignment="Left" Height="100" Margin="394,348,0,0" VerticalAlignment="Top" Width="189"/>
             <Image x:Name="image1_Copy1" HorizontalAlignment="Left" Height="100" Margin="200,346,0,0" VerticalAlignment="Top" Width="189"/>
