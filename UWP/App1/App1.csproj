@@ -93,12 +93,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminManager.cs" />
+    <Compile Include="AdminProfile.xaml.cs">
+      <DependentUpon>AdminProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSearchUser.xaml.cs">
+      <DependentUpon>AdminSearchUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewProfile.xaml.cs">
+      <DependentUpon>AdminViewProfile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Artikal.cs" />
     <Compile Include="ArtikalManager.cs" />
     <Compile Include="ArtikalValidator.cs" />
+    <Compile Include="AdminArtikal.xaml.cs">
+      <DependentUpon>AdminArtikal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Cart.cs" />
     <Compile Include="DostavneInformacije.cs" />
     <Compile Include="Filter Search.xaml.cs">
@@ -106,6 +118,7 @@
     </Compile>
     <Compile Include="IArtikalManager.cs" />
     <Compile Include="IArtikalValidator.cs" />
+    <Compile Include="ICreditCardService.cs" />
     <Compile Include="IItemManager.cs" />
     <Compile Include="IItemValidator.cs" />
     <Compile Include="IKorisnikManager.cs" />
@@ -117,6 +130,9 @@
     <Compile Include="ItemManager.cs" />
     <Compile Include="ItemValidator.cs" />
     <Compile Include="IValidatorKartica.cs" />
+    <Compile Include="Kolekcija.xaml.cs">
+      <DependentUpon>Kolekcija.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Korisnik.cs" />
     <Compile Include="KorisnikInfo.cs" />
     <Compile Include="KorisnikManager.cs" />
@@ -127,8 +143,18 @@
     <Compile Include="KritikaValidator.cs" />
     <Compile Include="Lokacija.cs" />
     <Compile Include="LokacijaManager.cs" />
+    <Compile Include="Mape.xaml.cs">
+      <DependentUpon>Mape.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MockCreditCardService.cs" />
+    <Compile Include="OfflineKorpa.xaml.cs">
+      <DependentUpon>OfflineKorpa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Password.cs" />
     <Compile Include="RegistrationManager.cs" />
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Sign In Page.xaml.cs">
       <DependentUpon>Sign In Page.xaml</DependentUpon>
     </Compile>
@@ -146,8 +172,8 @@
     <Compile Include="Artikal Page.xaml.cs">
       <DependentUpon>Artikal Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Cart %28payment info!!!!!!!!!!!!!!!!!!!%29.xaml.cs">
-      <DependentUpon>Cart %28payment info!!!!!!!!!!!!!!!!!!!%29.xaml</DependentUpon>
+    <Compile Include="Cart.xaml.cs">
+      <DependentUpon>Cart.xaml</DependentUpon>
     </Compile>
     <Compile Include="Unos kritike.xaml.cs">
       <DependentUpon>Unos kritike.xaml</DependentUpon>
@@ -179,7 +205,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AdminArtikal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminSearchUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminViewProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Filter Search.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Kolekcija.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Mape.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OfflineKorpa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -203,7 +261,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Cart %28payment info!!!!!!!!!!!!!!!!!!!%29.xaml">
+    <Page Include="Cart.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

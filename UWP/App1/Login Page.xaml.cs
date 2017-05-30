@@ -20,11 +20,14 @@ namespace App1
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class BlankPage3 : Page
+    public sealed partial class LoginPage : Page
     {
-        public BlankPage3()
+        public LoginPage()
         {
             this.InitializeComponent();
+            login = new LoginV
         }
+
+        public LoginVM login { get; set; }
     }
 }

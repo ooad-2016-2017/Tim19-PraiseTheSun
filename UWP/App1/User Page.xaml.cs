@@ -26,5 +26,10 @@ namespace App1
         {
             this.InitializeComponent();
         }
+
+        private void Go1_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

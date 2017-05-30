@@ -32,6 +32,7 @@
             <TextBox x:Name="textBox1_Copy" HorizontalAlignment="Left" Margin="126,261,0,0" TextWrapping="Wrap" Text="Adresa" VerticalAlignment="Top" Width="212" Height="35" TextChanged="textBox1_TextChanged" FontSize="18.667"/>
             <Button x:Name="button" Content="Confirm" HorizontalAlignment="Left" Margin="146,396,0,0" VerticalAlignment="Top" Width="192" Height="34" Click="button_Click"/>
         </Grid>
+        <Button x:Name="button1" Content="Dodaj Sliku" HorizontalAlignment="Left" Margin="549,591,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.258,0.088"/>
 
     </Grid>
 </Page>

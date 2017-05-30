@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="App1.BlankPage3"
+    x:Class="App1.LoginPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:App1"
@@ -17,9 +17,9 @@
         <Grid HorizontalAlignment="Left" Height="350" Margin="356,146,0,0" VerticalAlignment="Top" Width="563">
             <TextBlock x:Name="Username" HorizontalAlignment="Left" Margin="119,89,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" FontSize="24"/>
             <TextBlock x:Name="Password" HorizontalAlignment="Left" Margin="119,144,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" FontSize="24"/>
-            <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="281,77,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="24" Width="140"/>
-            <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="281,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="24" Width="140"/>
-            <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="222,225,0,0" VerticalAlignment="Top" FontSize="24" Height="55" Width="113"/>
+            <TextBox x:Name="textBoxUsername" HorizontalAlignment="Left" Margin="281,77,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="24" Width="140" TextChanged="textBox_TextChanged"/>
+            <TextBox x:Name="textBoxPassword" HorizontalAlignment="Left" Margin="281,132,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="24" Width="140"/>
+            <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="222,225,0,0" VerticalAlignment="Top" FontSize="24" Height="55" Width="113" Click="Login_Click"/>
         </Grid>
         <Image x:Name="image" HorizontalAlignment="Left" Height="502" Margin="1043,120,0,0" VerticalAlignment="Top" Width="227"/>
 

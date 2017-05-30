@@ -22,19 +22,13 @@ namespace App1
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+        public HomepageVM glavna { get; set; }
+
         public MainPage()
         {
             this.InitializeComponent();
-        }
-
-        private void Filter_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(BlankPage1));
-        }
-
-        private void appBarButton_Click(object sender, RoutedEventArgs e)
-        {
-
+            glavna = new HomepageVM();
         }
     }
 }
