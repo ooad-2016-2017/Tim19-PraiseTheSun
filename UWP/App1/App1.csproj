@@ -92,7 +92,7 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminManager.cs" />
+    <Compile Include="Model\AdminManager.cs" />
     <Compile Include="AdminProfile.xaml.cs">
       <DependentUpon>AdminProfile.xaml</DependentUpon>
     </Compile>
@@ -105,53 +105,53 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Artikal.cs" />
-    <Compile Include="ArtikalManager.cs" />
-    <Compile Include="ArtikalValidator.cs" />
+    <Compile Include="Model\Artikal.cs" />
+    <Compile Include="Model\ArtikalManager.cs" />
+    <Compile Include="Model\ArtikalValidator.cs" />
     <Compile Include="AdminArtikal.xaml.cs">
       <DependentUpon>AdminArtikal.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Cart.cs" />
-    <Compile Include="DostavneInformacije.cs" />
+    <Compile Include="Model\Cart.cs" />
+    <Compile Include="Model\DostavneInformacije.cs" />
     <Compile Include="Filter Search.xaml.cs">
       <DependentUpon>Filter Search.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IArtikalManager.cs" />
-    <Compile Include="IArtikalValidator.cs" />
-    <Compile Include="ICreditCardService.cs" />
-    <Compile Include="IItemManager.cs" />
-    <Compile Include="IItemValidator.cs" />
-    <Compile Include="IKorisnikManager.cs" />
-    <Compile Include="IKorisnikValidator.cs" />
-    <Compile Include="IKritikaManager.cs" />
-    <Compile Include="IKritikaValidator.cs" />
-    <Compile Include="ILokacijaManager.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="ItemManager.cs" />
-    <Compile Include="ItemValidator.cs" />
-    <Compile Include="IValidatorKartica.cs" />
+    <Compile Include="Model\IArtikalManager.cs" />
+    <Compile Include="Model\IArtikalValidator.cs" />
+    <Compile Include="Model\ICreditCardService.cs" />
+    <Compile Include="Model\IItemManager.cs" />
+    <Compile Include="Model\IItemValidator.cs" />
+    <Compile Include="Model\IKorisnikManager.cs" />
+    <Compile Include="Model\IKorisnikValidator.cs" />
+    <Compile Include="Model\IKritikaManager.cs" />
+    <Compile Include="Model\IKritikaValidator.cs" />
+    <Compile Include="Model\ILokacijaManager.cs" />
+    <Compile Include="Model\Item.cs" />
+    <Compile Include="Model\ItemManager.cs" />
+    <Compile Include="Model\ItemValidator.cs" />
+    <Compile Include="Model\IValidatorKartica.cs" />
     <Compile Include="Kolekcija.xaml.cs">
       <DependentUpon>Kolekcija.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Korisnik.cs" />
-    <Compile Include="KorisnikInfo.cs" />
-    <Compile Include="KorisnikManager.cs" />
-    <Compile Include="KorisnikValidator.cs" />
-    <Compile Include="KreditnaKartica.cs" />
-    <Compile Include="Kritika.cs" />
-    <Compile Include="KritikaManager.cs" />
-    <Compile Include="KritikaValidator.cs" />
-    <Compile Include="Lokacija.cs" />
-    <Compile Include="LokacijaManager.cs" />
+    <Compile Include="Model\Korisnik.cs" />
+    <Compile Include="Model\KorisnikInfo.cs" />
+    <Compile Include="Model\KorisnikManager.cs" />
+    <Compile Include="Model\KorisnikValidator.cs" />
+    <Compile Include="Model\KreditnaKartica.cs" />
+    <Compile Include="Model\Kritika.cs" />
+    <Compile Include="Model\KritikaManager.cs" />
+    <Compile Include="Model\KritikaValidator.cs" />
+    <Compile Include="Model\Lokacija.cs" />
+    <Compile Include="Model\LokacijaManager.cs" />
     <Compile Include="Mape.xaml.cs">
       <DependentUpon>Mape.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MockCreditCardService.cs" />
+    <Compile Include="Model\MockCreditCardService.cs" />
     <Compile Include="OfflineKorpa.xaml.cs">
       <DependentUpon>OfflineKorpa.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Password.cs" />
-    <Compile Include="RegistrationManager.cs" />
+    <Compile Include="Model\Password.cs" />
+    <Compile Include="Model\RegistrationManager.cs" />
     <Compile Include="Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -161,8 +161,8 @@
     <Compile Include="Login Page.xaml.cs">
       <DependentUpon>Login Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SlikaArtikal.cs" />
-    <Compile Include="SlikaKorisnik.cs" />
+    <Compile Include="Model\SlikaArtikal.cs" />
+    <Compile Include="Model\SlikaKorisnik.cs" />
     <Compile Include="User Page.xaml.cs">
       <DependentUpon>User Page.xaml</DependentUpon>
     </Compile>
@@ -182,7 +182,8 @@
       <DependentUpon>Homepage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValidatorKartica.cs" />
+    <Compile Include="Model\ValidatorKartica.cs" />
+    <Compile Include="ViewModel\HomepageVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
