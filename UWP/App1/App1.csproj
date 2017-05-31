@@ -92,6 +92,12 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameShopDbContext.cs" />
+    <Compile Include="GameShopDbContextModelSnapshot.cs" />
+    <Compile Include="IKolekcijaKorisnikaManager.cs" />
+    <Compile Include="KolekcijaKorisnika.cs" />
+    <Compile Include="KolekcijaKorisnikaManager.cs" />
+    <Compile Include="Migracija.cs" />
     <Compile Include="Model\AdminManager.cs" />
     <Compile Include="AdminProfile.xaml.cs">
       <DependentUpon>AdminProfile.xaml</DependentUpon>

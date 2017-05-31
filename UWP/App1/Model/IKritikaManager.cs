@@ -10,7 +10,7 @@ namespace App1
     {
         void dodajKritiku(Kritika kom);
         void obrisiKritiku(Kritika kom);
-        Kritika dajKritiku(int id);
-        int findID(Kritika kom);
+        List<Kritika> dajKritiku(int id);
+        //int findID(Kritika kom);
     }
 }

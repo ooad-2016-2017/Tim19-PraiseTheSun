@@ -10,7 +10,7 @@ namespace App1
     {
         bool dodajKorisnika(Korisnik user);
         bool obrisiKorisnika(Korisnik user);
-        Korisnik dajKorisnika(String id);
+        Korisnik dajKorisnika(int id);
         String findID(Korisnik user);
     }
 }

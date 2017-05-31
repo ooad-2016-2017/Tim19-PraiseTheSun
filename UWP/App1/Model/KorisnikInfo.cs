@@ -13,7 +13,7 @@ namespace App1
         public KorisnikInfo(String username, String password)
         {
             this.username = username;
-            this.password = Password(password);
+            this.pass = new Password(password);
         }
         public bool provjeriInfo(String username, String password) //provjerava da li su username i password jednaki username i passwordu ovog korisnika
         {

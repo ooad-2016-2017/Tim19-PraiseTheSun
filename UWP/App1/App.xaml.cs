@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.Entity;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,6 +16,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+
 namespace App1
 {
     /// <summary>
@@ -30,6 +32,11 @@ namespace App1
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            using (var db = new GameShopDbContext())
+            {
+                db.Database.ApplyMigrations();                
+            }
+            //ovdje treba azure valjda
         }
 
         /// <summary>
