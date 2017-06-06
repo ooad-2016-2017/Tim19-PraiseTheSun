@@ -189,7 +189,13 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\ValidatorKartica.cs" />
+    <Compile Include="ViewModel\FilterVM.cs" />
     <Compile Include="ViewModel\HomepageVM.cs" />
+    <Compile Include="ViewModel\LoginVM.cs" />
+    <Compile Include="ViewModel\MapeVM.cs" />
+    <Compile Include="ViewModel\ProfileVM.cs" />
+    <Compile Include="ViewModel\RegisterVM.cs" />
+    <Compile Include="ViewModel\ShopSearchVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -283,6 +289,9 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

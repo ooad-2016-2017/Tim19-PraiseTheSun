@@ -14,12 +14,12 @@ using App1.View;
 
 namespace App1.ViewModel
 {
-    class HomepageVM : INotifyPropertyChanged
+    class ShopSearchVM
     {
         #region atributi
         private Korisnik curUser; //trenutni loginani user
-        private Image naslovnaSlika; //promocijska slika
         private String searchString; //uneseni string u search
+        private List<Artikal> results; //rezultati pretrage
         #endregion
 
         #region komande
@@ -27,54 +27,85 @@ namespace App1.ViewModel
         public RelayCommand cfilter { get; set; }
         public RelayCommand clogin { get; set; }
         public RelayCommand cregister { get; set; }
-        public RelayCommand cmaps { get; set; }
         public RelayCommand cprofile { get; set; }
         #endregion
 
         #region konstruktor
+
         /// <summary>
-        /// inicijalizuje homepage bez loginanog usera i loada promocionu sliku
+        /// daje listu stringova iz regexpanog stringa odvojenog sa ';'
         /// </summary>
-        public HomepageVM()
+        /// <param name="regexp"></param>
+        /// <returns></returns>
+        private List<String> getList(String regexp)
         {
-            //inicijalizacija neloginanog usera
-            this.curUser = null;
-            //loadanje promocione slike
-            BitmapImage src = new BitmapImage();
-            src.BeginInit();
-            src.UriSource = new Uri("naslovna.png", UriKind.Relative);
-            src.CacheOption = BitmapCacheOption.OnLoad;
-            src.EndInit();
-            this.naslovnaSlika = new Image();
-            this.naslovnaSlika.Source = src;
-            this.csearch = new RelayCommand(pretraga);
-            this.cfilter = new RelayCommand(filtriraj);
-            this.clogin = new RelayCommand(logiranje);
-            this.cregister = new RelayCommand(registracija);
-            this.cmaps = new RelayCommand(mape);
-            this.cprofile = new RelayCommand(profil);
+            List<String> lista = new List<String>;
+            String cur = "";
+            foreach (char letter in regexp)
+            {
+                if (letter == ";")
+                {
+                    lista.Add(cur);
+                }
+                else
+                {
+                    cur += letter;
+                }
+            }
+            return lista;
         }
 
         /// <summary>
-        /// inicijalizuje homepage sa definiranim userom
+        /// inicijalizuje search page sa loginanim userom
         /// </summary>
-        /// <param name="user"></param>
-        public HomepageVM(Korisnik user)
+        public ShopSearchVM(Korisnik user, String searched)
         {
-            //inicijalizuje trenutnog usera
             this.curUser = user;
-            BitmapImage src = new BitmapImage();
-            src.BeginInit();
-            src.UriSource = new Uri("naslovna.png", UriKind.Relative);
-            src.CacheOption = BitmapCacheOption.OnLoad;
-            src.EndInit();
-            this.naslovnaSlika = new Image();
-            this.naslovnaSlika.Source = src;
+            this.searchString = searched;
+            this.results = new List<Artikal>();
+            using (var db = new GameShopDbContext())
+            {
+                foreach(DataRow row in db.Rows)
+                {
+                    if (row["ime"].contains(searched))
+                    {
+                        this.results.Add(new Artikal(row["info"], row["ime"], (float)row["cijena"] / 100,
+                            List<String>(getList(row["ListaKategorija"])), row["tipArtikla"], row["slika"]));
+                    }
+                }
+            }
             this.csearch = new RelayCommand(pretraga);
             this.cfilter = new RelayCommand(filtriraj);
             this.clogin = new RelayCommand(logiranje);
             this.cregister = new RelayCommand(registracija);
-            this.cmaps = new RelayCommand(mape);
+            this.cprofile = new RelayCommand(profil);
+        }
+        /// <summary>
+        /// kreiranje ShopSearchVM sa datim korisnikom pretrazenim stringom i kategorijama
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="searched"></param>
+        /// <param name="kategorije"></param>
+        public ShopSearchVM(Korisnik user, String searched, List<String> kategorije)
+        {
+            this.curUser = user;
+            this.searchString = searched;
+            this.results = new List<Artikal>();
+            using (var db = new GameShopDbContext())
+            {
+                foreach (DataRow row in db.Rows)
+                {
+                    if (List<String>(getList(row["ListaKategorija"])) == kategorije && row["ime"].contains(searched))
+                    {
+                        this.results.Add(new Artikal(row["info"], row["ime"], (float)row["cijena"] / 100,
+                            List<String>(getList(row["ListaKategorija"])), row["tipArtikla"], row["slika"]));
+                    }
+                }
+            }
+            this.csearch = new RelayCommand(pretraga);
+            this.cfilter = new RelayCommand(filtriraj);
+            this.clogin = new RelayCommand(logiranje);
+            this.cregister = new RelayCommand(registracija);
             this.cprofile = new RelayCommand(profil);
         }
         #endregion
@@ -103,11 +134,28 @@ namespace App1.ViewModel
                 OnPropertyChanged("CurUser");
             }
         }
-        public Image NaslovnaSlika
+        public List<Artikal> Results
         {
             get
             {
-                return naslovnaSlika;
+                return results;
+            }
+            set
+            {
+                results = value;
+                OnPropertyChanged("Results");
+            }
+        }
+        public String SearchString
+        {
+            get
+            {
+                return searchString;
+            }
+            set
+            {
+                searchString = value;
+                OnPropertyChanged("SearchString");
             }
         }
         #endregion
@@ -139,13 +187,6 @@ namespace App1.ViewModel
             var frame = (Frame)Window.Current.Content;
             RegisterVM neuVM = new RegisterVM(this.curUser);
             frame.Navigate(typeof(RegisterView), neuVM);
-        }
-
-        public void mape()
-        {
-            var frame = (Frame)Window.Current.Content;
-            MapeVM neuVM = new MapeVM(this.curUser);
-            frame.Navigate(typeof(MapeView), neuVM);
         }
 
         public void profil()

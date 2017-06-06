@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using App1.ViewModel;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -22,13 +23,15 @@ namespace App1
     /// </summary>
     public sealed partial class MainPage : Page
     {
-
-        public HomepageVM glavna { get; set; }
-
         public MainPage()
         {
             this.InitializeComponent();
-            glavna = new HomepageVM();
+            DataContext = new HomepageVM();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            DataContext = (HomepageVM)e.Parameter;
         }
     }
 }

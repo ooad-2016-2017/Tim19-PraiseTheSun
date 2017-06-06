@@ -26,10 +26,5 @@ namespace App1
         {
             this.InitializeComponent();
         }
-
-        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
     }
 }

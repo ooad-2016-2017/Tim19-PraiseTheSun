@@ -18,6 +18,11 @@ namespace App1
             salt = System.Text.Encoding.Default.GetString(GetSalt());
             hashedPassword = hash(password + salt);
         }
+        public Password(string password, string salt)
+        {
+            this.salt = salt;
+            this.hashedPassword = hash(password + salt);
+        }
         public bool provjeriPass(string password)
         {
             return hashedPassword == hash(password + salt);
