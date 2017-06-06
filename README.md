@@ -49,9 +49,7 @@ korisniku odmah daje popuste na buduæe kupovine.
 
 ### Podnošenje zahtjeva za povratak robe
 Korisnik može kroz profil pristupiti pregledu svoje kolekcije i kroz to podnijeti zahtjev za povratak robe 
-davajuæi usput odgovarajuæi komentar. Ovaj zahtjev procesuira neki od uposlenika i daje odgovarajuæe
-obrazloženje kada odobri ili odbije zahtjev. U sluèaju odobrenja, korisnik biva obaviješten o konkretnostima
-ovog povratka.
+unutar nekog vremena kupovine te (elektronske) robe.
 
 ### Administracija korisnika
 Admin ima moguænost pristupa sistemu kroz koji može da pregleda korisnike i artikle. Kada otvori profil korisnika
@@ -59,10 +57,8 @@ on ima moguænost da tog korisnika banuje. Kada otvori artikal on može da uklanja
 artikal.
 
 ### Podnošenje zahtjeva
-Uposlenici tog biznisa imaju moguænost kroz svoje profile da podnose zahtjeve za razne svrhe kao što su
-nabavka robe, premještanje robe sa jednog mjesta na drugo, dodavanje lokacija na sistem mapa(vanjski sistem),
-itd. Osim toga drugi uposlenici/admini mogu da odobravaju ili odbijaju ove zahtjeve ili sistem sam može da
-to uradi ukoliko se zahtjev tog tipa automatski procesira.
+Uposlenici tog biznisa imaju moguænost kroz svoje profile da podnose zahtjeve za dodavanje i brisanje lokacija
+sa sistema za mape, prodaju robe i sl.
 
 ## Funkcionalnosti
 - Login/Registracija korisnika u aplikaciji
@@ -81,17 +77,14 @@ to uradi ukoliko se zahtjev tog tipa automatski procesira.
 - Pregled preporuèenih artikala na osnovu prethodnih transakcija izvršenih od svih korisnika
 - Promovisanje novog materijala na glavnoj stranici
 - Sistem za offline prodaju spregnut sa online prodavnicom
-- Podnošenje raznih administrativnih zahtjeva(od strane uposlenika) za razlièite fizikalne probleme(premještanje, nabavka robe, i sl.)
 - Podnošenje zahtjeva(od strane zaposlenika) koji se tièu aplikacije
-- Manuelna obrada zahtjeva od strane drugog uposlenika / admina
 - Sistem administracije nad korisnicima i kritikama 
 - Sistem za fizikalno skeniranje kreditnih kartica
 
 ## Akteri
 - Korisnik usluga: To je osoba koja ima moguænosti pregleda, kupovine i povratka robe unutar online prodavnice.
 - Uposlenik: On je zadužen za razne administrativne poslove na poslovnim mjestima, te za komunikaciju u vidu
-zahtjeva kroz aplikaciju sa drugim poslovnicama i administratorima. Oni u isto vrijeme podnosi i obraðuje odgovarajuæe
-zahtjeve ovisno od svojih obaveza.
+zahtjeva kroz aplikaciju.
 - Administrator: To je osoba koja je istovremeno uposlenik, ali uz to ima dodatne ovlasti koje se tièu administracije
 stranice kroz sklanjanje nepoželjnih(uvredljivih, spam i sl.) komentara te nepoželjnih korisnika.
 - Kritièar: Osoba èiji je zadatak da daje ocjene za robu koju prodaje firma. Komentari kritièara su istaknuti i

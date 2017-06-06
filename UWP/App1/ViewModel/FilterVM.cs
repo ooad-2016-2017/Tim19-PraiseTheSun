@@ -3,78 +3,58 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Input;
-using System.Windows;
-using System.Drawing;
-using System.ComponentModel;
-using Windows.UI.Popups;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using App1.View;
 
 namespace App1.ViewModel
 {
-    class HomepageVM : INotifyPropertyChanged
+    class FilterVM
     {
         #region atributi
         private Korisnik curUser; //trenutni loginani user
-        private Image naslovnaSlika; //promocijska slika
         private String searchString; //uneseni string u search
+        private List<String> kategorije; //selektovane kategorije
         #endregion
 
         #region komande
         public RelayCommand csearch { get; set; }
-        public RelayCommand cfilter { get; set; }
         public RelayCommand clogin { get; set; }
         public RelayCommand cregister { get; set; }
-        public RelayCommand cmaps { get; set; }
         public RelayCommand cprofile { get; set; }
         #endregion
 
         #region konstruktor
         /// <summary>
-        /// inicijalizuje homepage bez loginanog usera i loada promocionu sliku
+        /// daje listu stringova iz regexpanog stringa odvojenog sa ';'
         /// </summary>
-        public HomepageVM()
+        /// <param name="regexp"></param>
+        /// <returns></returns>
+        private List<String> getList(String regexp)
         {
-            //inicijalizacija neloginanog usera
-            this.curUser = null;
-            //loadanje promocione slike
-            BitmapImage src = new BitmapImage();
-            src.BeginInit();
-            src.UriSource = new Uri("naslovna.png", UriKind.Relative);
-            src.CacheOption = BitmapCacheOption.OnLoad;
-            src.EndInit();
-            this.naslovnaSlika = new Image();
-            this.naslovnaSlika.Source = src;
-            this.csearch = new RelayCommand(pretraga);
-            this.cfilter = new RelayCommand(filtriraj);
-            this.clogin = new RelayCommand(logiranje);
-            this.cregister = new RelayCommand(registracija);
-            this.cmaps = new RelayCommand(mape);
-            this.cprofile = new RelayCommand(profil);
+            List<String> lista = new List<String>;
+            String cur = "";
+            foreach (char letter in regexp)
+            {
+                if (letter == ";")
+                {
+                    lista.Add(cur);
+                }
+                else
+                {
+                    cur += letter;
+                }
+            }
+            return lista;
         }
 
         /// <summary>
-        /// inicijalizuje homepage sa definiranim userom
+        /// inicijalizuje filter page sa loginanim userom
         /// </summary>
-        /// <param name="user"></param>
-        public HomepageVM(Korisnik user)
+        public FilterVM(Korisnik user)
         {
-            //inicijalizuje trenutnog usera
             this.curUser = user;
-            BitmapImage src = new BitmapImage();
-            src.BeginInit();
-            src.UriSource = new Uri("naslovna.png", UriKind.Relative);
-            src.CacheOption = BitmapCacheOption.OnLoad;
-            src.EndInit();
-            this.naslovnaSlika = new Image();
-            this.naslovnaSlika.Source = src;
+            this.kategorije = new List<String>();
             this.csearch = new RelayCommand(pretraga);
-            this.cfilter = new RelayCommand(filtriraj);
             this.clogin = new RelayCommand(logiranje);
             this.cregister = new RelayCommand(registracija);
-            this.cmaps = new RelayCommand(mape);
             this.cprofile = new RelayCommand(profil);
         }
         #endregion
@@ -103,11 +83,28 @@ namespace App1.ViewModel
                 OnPropertyChanged("CurUser");
             }
         }
-        public Image NaslovnaSlika
+        public List<String> Results
         {
             get
             {
-                return naslovnaSlika;
+                return results;
+            }
+            set
+            {
+                results = value;
+                OnPropertyChanged("Results");
+            }
+        }
+        public String SearchString
+        {
+            get
+            {
+                return searchString;
+            }
+            set
+            {
+                searchString = value;
+                OnPropertyChanged("SearchString");
             }
         }
         #endregion
@@ -116,15 +113,8 @@ namespace App1.ViewModel
         public void pretraga()
         {
             var frame = (Frame)Window.Current.Content;
-            ShopSearchVM neuVM = new ShopSearchVM(this.curUser, this.searchString);
+            ShopSearchVM neuVM = new ShopSearchVM(this.curUser, this.searchString, this.kategorije);
             frame.Navigate(typeof(ShopSearchView), neuVM);
-        }
-
-        public void filtriraj()
-        {
-            var frame = (Frame)Window.Current.Content;
-            FilterVM neuVM = new FilterVM(this.curUser);
-            frame.Navigate(typeof(FilterView), neuVM);
         }
 
         public void logiranje()
@@ -139,13 +129,6 @@ namespace App1.ViewModel
             var frame = (Frame)Window.Current.Content;
             RegisterVM neuVM = new RegisterVM(this.curUser);
             frame.Navigate(typeof(RegisterView), neuVM);
-        }
-
-        public void mape()
-        {
-            var frame = (Frame)Window.Current.Content;
-            MapeVM neuVM = new MapeVM(this.curUser);
-            frame.Navigate(typeof(MapeView), neuVM);
         }
 
         public void profil()

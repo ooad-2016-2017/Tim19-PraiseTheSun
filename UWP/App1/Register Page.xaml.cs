@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using App1.ViewModel;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -20,34 +21,16 @@ namespace App1
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class BlankPage2 : Page
+    public sealed partial class RegisterView : Page
     {
-        using (GameShopEntities context = new GameShopEntities())
+        public RegisterView()
         {
-                public BlankPage2()
-            {
-                this.InitializeComponent();
-            }
+            this.InitializeComponent();
+        }
 
-            private void Register_Click(System.Object sender, RoutedEventArgs e)
-            {
-                Lokacija lokacija = new Lokacija()
-                {
-                    //??
-                    adresa = textBox_Copy3.Text;       
-                }
-
-
-                Korisnik korisnik = new Korisnik()
-                {
-                    username = textBox.Text;
-                    pass = textBox_Copy1.Text;
-                    //treba staviti onu od iznad
-                    tipAccounta= "Obični";
-                };    
-                context.Lokacija.Add(lokacija);
-                context.Korisnik.Add(korisnik);           
-            }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            DataContext = (RegisterVM)e.Parameter;
         }
     }
 }

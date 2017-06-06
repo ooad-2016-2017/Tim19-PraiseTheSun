@@ -18,27 +18,25 @@ namespace App1
         public int cijena { get; set; } //cijena kao int koja je 100 puta veca od stvarne
         public artType tipArtikla { get; set; }
         public String info { get; set; } //opce informacije o artiklu
-        //public List<Kritika> listaKritika { get; set; }
-        //public List<String> listaKategorija { get; set; }
-        //public List<Artikal> listaPreporuka { get; set; }
-        //public SlikaArtikal slika { get; set; }
-        public Image slika { get; set; }
+        public List<Kritika> listaKritika { get; set; }
+        public List<String> listaKategorija { get; set; }
+        public List<Artikal> listaPreporuka { get; set; }
+        public SlikaArtikal slika { get; set; }
         public Boolean removed = false;
-        public Artikal(String info, String ime, float cijena, /*List<String> listaKategorija,*/ artType tipArtikla, Image slika)
+        public Artikal(String info, String ime, float cijena, List<String> listaKategorija, artType tipArtikla, Image slika)
         {
             this.info = info;
             this.ime = ime;
             this.cijena = (int)(cijena * 100 + 1e-6); //kako bi se izbjegao problem sa zaokruzivanjem
-            //this.listaKategorija = new List<String>(listaKategorija);
+            this.listaKategorija = new List<String>(listaKategorija);
             this.tipArtikla = tipArtikla;
-            //this.slika = slika;
+            this.slika = new SlikaArtikal(slika);
             const int maxWidth = 200;
             const int maxHeight = 200;
             if (slika.Width > maxWidth) throw new ArgumentException("Presiroka slika");
             if (slika.Height > maxHeight) throw new ArgumentException("Previsoka slika");
-            this.slika = slika;
-            //this.listaKritika = new List<Kritika>();
-            //this.listaPreporuka = new List<Artikal>();
+            this.listaKritika = new List<Kritika>();
+            this.listaPreporuka = new List<Artikal>();
         }
         /*public void dodajKritiku(Kritika komentar)
         {

@@ -12,9 +12,9 @@ namespace App1
         {
 
         }
-        public void postojiLi(String username, String password)
+        public bool postojiLi(String username, String password)
         {
-
+            return true;
         }
     }
 }
